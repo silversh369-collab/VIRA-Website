@@ -13,13 +13,14 @@
 
     <!-- سربرگ سایت -->
     <header>
-        <div class="logo">
-            <img src="assets/images/vira-logo.jpg"
-         alt="لوگوی گروه تبلیغاتی ویرا">
-        </div>
+        <a class="logo" href="#home" aria-label="صفحه اصلی گروه تبلیغاتی ویرا">
+            <img
+                src="assets/images/vira-logo.jpg"
+                alt="لوگوی گروه تبلیغاتی ویرا"
+            >
+        </a>
 
-
-        <nav>
+        <nav aria-label="منوی اصلی">
             <a href="#home">خانه</a>
             <a href="#services">خدمات ما</a>
             <a href="#portfolio">نمونه‌کارها</a>
@@ -27,7 +28,7 @@
             <a href="#contact">تماس با ما</a>
         </nav>
 
-        <button type="button">درخواست مشاوره</button>
+        <a class="header-button" href="#contact">درخواست مشاوره</a>
     </header>
 
     <!-- بخش اصلی -->
@@ -104,13 +105,13 @@
 
             <form>
                 <label for="name">نام شما</label>
-                <input id="name" type="text" placeholder="نام خود را وارد کنید">
+                <input id="name" name="name" type="text" placeholder="نام خود را وارد کنید">
 
                 <label for="phone">شماره تماس</label>
-                <input id="phone" type="tel" placeholder="شماره تماس">
+                <input id="phone" name="phone" type="tel" placeholder="شماره تماس">
 
                 <label for="message">توضیحات درخواست</label>
-                <textarea id="message" placeholder="چه نوع تابلویی نیاز دارید؟"></textarea>
+                <textarea id="message" name="message" placeholder="چه نوع تابلویی نیاز دارید؟"></textarea>
 
                 <button type="submit">ارسال درخواست</button>
             </form>
@@ -125,4 +126,3 @@
 
 </body>
 </html>
-
