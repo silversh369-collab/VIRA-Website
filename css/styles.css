@@ -1,22 +1,40 @@
 
-/* =====================================
+/* =========================================
    VIRA Advertising Group
-   Main Stylesheet
-===================================== */
+   Professional Website Styles
+========================================= */
 
-/* تنظیمات پایه */
+
+/* =========================================
+   1. متغیرهای اصلی طراحی
+========================================= */
 
 :root {
-    --background: #ffffff;
-    --surface: #faf9f6;
-    --text: #242424;
+    --background: #f7f5ef;
+    --surface: #ffffff;
+    --surface-soft: #f0ede5;
+
+    --text: #25231f;
     --muted: #77736b;
+
     --primary: #b58a43;
     --primary-dark: #947039;
-    --border: #e9e5dc;
-    --header: #ffffff;
-    --shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+    --primary-light: #e8d9b9;
+
+    --border: #e8e2d7;
+
+    --shadow:
+        0 12px 35px rgba(37, 35, 31, 0.07);
+
+    --radius: 16px;
+
+    --container: 1200px;
 }
+
+
+/* =========================================
+   2. تنظیمات عمومی
+========================================= */
 
 * {
     margin: 0;
@@ -26,6 +44,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -33,6 +52,8 @@ body {
     background: var(--background);
     color: var(--text);
     line-height: 1.9;
+    direction: rtl;
+    overflow-x: hidden;
 }
 
 a {
@@ -40,9 +61,14 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+}
+
 button,
 input,
-textarea {
+textarea,
+select {
     font-family: inherit;
 }
 
@@ -50,24 +76,37 @@ button {
     cursor: pointer;
 }
 
-/* سربرگ */
+section {
+    scroll-margin-top: 90px;
+}
 
-header {
+
+/* =========================================
+   3. سربرگ سایت
+========================================= */
+
+.site-header {
     width: 100%;
-    min-height: 90px;
+    min-height: 92px;
     padding: 12px 7%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 25px;
-    background: var(--header);
+
+    background: rgba(255, 255, 255, 0.96);
     border-bottom: 1px solid var(--border);
+
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
 }
 
-/* لوگوی اصلی ویرا */
+
+/* لوگوی ویرا */
 
 .logo {
     display: flex;
@@ -78,248 +117,709 @@ header {
 
 .logo img {
     display: block;
-    width: 76px;
-    height: 76px;
+    width: 72px;
+    height: 72px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-/* منوی سایت */
 
-nav {
+/* منوی اصلی */
+
+.main-nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
 }
 
-nav a {
+.main-nav a {
     font-size: 14px;
+    font-weight: 600;
     color: var(--text);
+
     transition: color 0.3s ease;
+
+    position: relative;
 }
 
-nav a:hover {
-    color: var(--primary);
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: width 0.3s ease;
 }
 
-/* دکمه سربرگ */
+.main-nav a:hover {
+    color: var(--primary-dark);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* دکمه‌های اصلی */
 
 .header-button,
-form button {
-    display: inline-block;
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 11px 25px;
+
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.header-button,
+.primary-button {
     background: var(--primary);
     color: #ffffff;
-    border: none;
-    padding: 12px 23px;
-    border-radius: 7px;
-    font-size: 14px;
-    transition: 0.3s;
+    border: 1px solid var(--primary);
 }
 
 .header-button:hover,
-form button:hover {
+.primary-button:hover {
     background: var(--primary-dark);
-    transform: translateY(-2px);
+    border-color: var(--primary-dark);
+    transform: translateY(-3px);
 }
 
-/* بخش معرفی */
+.secondary-button {
+    color: var(--primary-dark);
+    border: 1px solid var(--primary);
+    background: transparent;
+}
+
+.secondary-button:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+
+/* =========================================
+   4. بخش معرفی اصلی
+========================================= */
 
 .hero {
+    width: 100%;
+    max-width: 1500px;
     min-height: 570px;
-    padding: 70px 7%;
+
+    margin: 0 auto;
+    padding: 75px 7%;
+
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
+    grid-template-columns: 1fr 1.05fr;
     align-items: center;
     gap: 55px;
+
     background:
         radial-gradient(
-            circle at 90% 20%,
-            rgba(181, 138, 67, 0.09),
+            circle at 85% 20%,
+            rgba(181, 138, 67, 0.13),
             transparent 35%
         ),
         var(--background);
 }
 
-.hero-content > p:first-child {
-    color: var(--primary);
+
+/* محتوای متنی معرفی */
+
+.hero-content {
+    max-width: 560px;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+
+    color: var(--primary-dark);
     font-size: 17px;
     font-weight: bold;
+
+    margin-bottom: 15px;
 }
 
 .hero-content h1 {
-    font-size: clamp(35px, 5vw, 58px);
-    line-height: 1.5;
-    margin: 15px 0;
-    color: var(--text);
+    font-size: clamp(34px, 4.5vw, 57px);
+    font-weight: 800;
+    line-height: 1.6;
+
+    margin-bottom: 20px;
 }
 
-.hero-content > p:nth-of-type(2) {
-    max-width: 480px;
+.hero-description {
+    max-width: 490px;
+
     color: var(--muted);
-    margin-bottom: 30px;
     font-size: 16px;
+
+    margin-bottom: 30px;
 }
 
-.hero-content > a {
-    display: inline-block;
-    padding: 13px 28px;
-    background: var(--primary);
-    color: white;
-    border-radius: 7px;
-    transition: 0.3s;
+
+/* دکمه‌های بخش معرفی */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
-.hero-content > a:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-}
 
-/* تصویر اصلی */
+/* تصویر معرفی */
 
 .hero-image {
-    min-height: 370px;
-    border-radius: 18px;
+    width: 100%;
+    min-height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     overflow: hidden;
-    background: linear-gradient(135deg, #ded8cc, #8b806d);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6dfd1,
+            #b7a88d,
+            #74654f
+        );
+
     box-shadow: var(--shadow);
 }
 
 .hero-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 370px;
-    object-fit: cover;
     display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
 }
 
-/* بخش‌های عمومی */
 
-section:not(.hero) {
-    padding: 85px 7%;
+/* =========================================
+   5. نوار ویژگی‌های ویرا
+========================================= */
+
+.features {
+    width: 86%;
+    max-width: var(--container);
+
+    margin: -30px auto 0;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    position: relative;
+    z-index: 2;
 }
 
-section:not(.hero) h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
+.feature-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+    background: var(--surface-soft);
+
+    color: var(--primary-dark);
+    font-size: 25px;
+}
+
+.feature-item h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.feature-item p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   6. تنظیمات عمومی عنوان بخش‌ها
+========================================= */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
     text-align: center;
 }
 
-/* خدمات */
+.section-eyebrow {
+    color: var(--primary-dark);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
 
-#services {
-    background: var(--surface);
+.section-heading h2 {
+    font-size: clamp(25px, 3vw, 35px);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   7. بخش خدمات
+========================================= */
+
+.services-section {
+    padding: 100px 7%;
+    background: var(--surface-soft);
 }
 
 .service-list {
+    max-width: var(--container);
+    margin: 0 auto;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-.service-list article {
-    padding: 30px 25px;
-    background: var(--background);
+.service-card {
+    padding: 35px 28px;
+
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius);
+
     box-shadow: var(--shadow);
-    transition: 0.3s;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.service-list article:hover {
-    transform: translateY(-7px);
+.service-card:hover {
+    transform: translateY(-8px);
     border-color: var(--primary);
 }
 
-.service-list h3 {
-    color: var(--primary);
+.service-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+    background: var(--surface-soft);
+
+    color: var(--primary-dark);
+    font-size: 27px;
+}
+
+.service-card h3 {
+    font-size: 18px;
     margin-bottom: 12px;
 }
 
-.service-list p,
-#portfolio p,
-#about p {
+.service-card p {
     color: var(--muted);
-    text-align: center;
+    font-size: 14px;
+    line-height: 2;
 }
 
-/* درباره ما و نمونه کارها */
 
-#portfolio {
+/* =========================================
+   8. بخش نمونه‌کارها
+========================================= */
+
+.portfolio-section {
+    padding: 100px 7%;
     background: var(--background);
 }
 
-#about {
+.portfolio-grid {
+    max-width: var(--container);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.portfolio-card {
+    overflow: hidden;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-7px);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8dfcf,
+            #9c8c70
+        );
+}
+
+.portfolio-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-info {
+    padding: 22px;
+}
+
+.portfolio-info h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.portfolio-info p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   9. بخش درباره ما
+========================================= */
+
+.about-section {
+    padding: 100px 7%;
+    background: var(--surface-soft);
+}
+
+.about-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+
+    padding: 45px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+.about-content h2 {
+    font-size: clamp(25px, 3vw, 35px);
+    margin-bottom: 18px;
+}
+
+.about-content > p:not(.section-eyebrow) {
+    max-width: 650px;
+    margin: 0 auto 25px;
+
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.about-content .secondary-button {
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   10. مراحل همکاری
+========================================= */
+
+.process-section {
+    padding: 100px 7%;
+    background: var(--background);
+}
+
+.process-list {
+    max-width: var(--container);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.process-item {
+    padding: 30px;
+    text-align: center;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
     background: var(--surface);
 }
 
-/* فرم تماس */
+.process-item span {
+    width: 55px;
+    height: 55px;
 
-#contact {
-    background: var(--background);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 50%;
+    background: var(--primary-light);
+
+    color: var(--primary-dark);
+    font-weight: bold;
+    font-size: 18px;
+
+    direction: ltr;
 }
 
-form {
-    max-width: 600px;
+.process-item h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.process-item p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   11. بخش تماس با ما
+========================================= */
+
+.contact-section {
+    padding: 100px 7%;
+    background: var(--surface-soft);
+}
+
+#contact-form {
+    width: 100%;
+    max-width: 680px;
+
     margin: 0 auto;
+    padding: 35px;
+
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
 }
 
-form label {
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
     font-size: 14px;
     font-weight: bold;
 }
 
-form input,
-form textarea {
+.form-group input,
+.form-group textarea,
+.form-group select {
     width: 100%;
-    padding: 14px;
+    min-height: 48px;
+
+    padding: 12px 15px;
+
     border: 1px solid var(--border);
-    border-radius: 7px;
-    background: var(--surface);
+    border-radius: 8px;
+
+    background: var(--background);
     color: var(--text);
+
     font-size: 14px;
     outline: none;
+
+    transition: border-color 0.3s ease;
 }
 
-form input:focus,
-form textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
     border-color: var(--primary);
 }
 
-form textarea {
-    min-height: 130px;
+.form-group textarea {
+    min-height: 140px;
     resize: vertical;
 }
 
-/* پایین سایت */
+#contact-form button {
+    align-self: flex-start;
+}
 
-footer {
-    padding: 30px 7%;
-    background: #25221d;
+
+/* =========================================
+   12. پایین سایت
+========================================= */
+
+.site-footer {
+    padding: 65px 7% 20px;
+
+    background: #25231f;
     color: #ffffff;
+}
+
+.footer-content {
+    max-width: var(--container);
+    margin: 0 auto 45px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand img {
+    width: 75px;
+    height: 75px;
+
+    display: block;
+    object-fit: cover;
+
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.footer-brand h2 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.footer-brand p {
+    color: #c9c2b5;
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h3 {
+    color: var(--primary-light);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #d7d1c7;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-light);
+}
+
+.footer-bottom {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
     text-align: center;
 }
 
-footer p {
-    font-size: 13px;
-    margin: 5px 0;
+.footer-bottom p {
+    color: #bdb6aa;
+    font-size: 12px;
 }
 
-/* نمایش در موبایل و تبلت */
 
-@media (max-width: 900px) {
+/* =========================================
+   13. واکنش‌گرایی تبلت
+========================================= */
 
-    header {
+@media (max-width: 950px) {
+
+    .site-header {
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    nav {
+    .main-nav {
+        order: 3;
+        width: 100%;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        gap: 15px 25px;
     }
 
     .hero {
@@ -327,42 +827,69 @@ footer p {
         text-align: center;
     }
 
-    .hero-content > p:nth-of-type(2) {
+    .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .hero-description {
         margin-right: auto;
         margin-left: auto;
     }
 
-    .service-list {
-        grid-template-columns: 1fr 1fr;
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-image {
+        min-height: 320px;
+    }
+
+    .hero-image img {
+        height: 320px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-list,
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+
+/* =========================================
+   14. واکنش‌گرایی موبایل
+========================================= */
+
 @media (max-width: 600px) {
 
-    header {
-        padding: 15px 5%;
+    .site-header {
+        padding: 12px 5%;
+        gap: 12px;
     }
 
     .logo img {
-        width: 68px;
-        height: 68px;
+        width: 62px;
+        height: 62px;
     }
 
-    nav {
+    .main-nav {
         gap: 10px 16px;
     }
 
-    nav a {
+    .main-nav a {
         font-size: 12px;
     }
 
     .header-button {
         width: 100%;
-        text-align: center;
     }
 
     .hero {
-        padding: 50px 6%;
+        padding: 55px 6%;
         gap: 35px;
     }
 
@@ -370,16 +897,80 @@ footer p {
         font-size: 34px;
     }
 
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions a {
+        width: 100%;
+    }
+
     .hero-image,
     .hero-image img {
-        min-height: 240px;
+        min-height: 230px;
+        height: 230px;
     }
 
-    section:not(.hero) {
-        padding: 60px 6%;
+    .features {
+        width: 90%;
+        padding: 18px 10px;
+        gap: 12px;
     }
 
-    .service-list {
+    .feature-item h3 {
+        font-size: 14px;
+    }
+
+    .feature-item p {
+        font-size: 11px;
+    }
+
+    .feature-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 21px;
+    }
+
+    .services-section,
+    .portfolio-section,
+    .about-section,
+    .process-section,
+    .contact-section {
+        padding: 65px 6%;
+    }
+
+    .service-list,
+    .portfolio-grid,
+    .process-list {
         grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .about-content {
+        padding: 30px 20px;
+    }
+
+    #contact-form {
+        padding: 23px 18px;
+    }
+
+    #contact-form button {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
     }
 }
