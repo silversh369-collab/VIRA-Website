@@ -1,366 +1,204 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گروه تبلیغاتی ویرا</title>
-    
-    <!-- لود فونت وزیرمتن -->
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="گروه تبلیغاتی ویرا؛ طراحی، ساخت و اجرای انواع تابلوهای تبلیغاتی.">
+    <meta name="theme-color" content="#ffffff">
+    <title>گروه تبلیغاتی ویرا | درخشش کسب‌وکار شما</title>
 
-    <style>
-        /* --- تنظیمات پایه --- */
-        :root {
-            --primary-yellow: #f4b400;
-            --dark-text: #111111;
-            --light-gray: #f9f9f9;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Vazirmatn', sans-serif;
-        }
-
-        body {
-            background-color: #fff;
-            color: var(--dark-text);
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-
-        /* --- سربرگ (Header) --- */
-        .site-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            background-color: #fff;
-            position: relative;
-            z-index: 100;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .logo img {
-            height: 70px;
-            border-radius: 50%;
-        }
-
-        .main-nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .main-nav a {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #444;
-            position: relative;
-            padding-bottom: 8px;
-            transition: var(--transition);
-        }
-
-        .main-nav a:hover, .main-nav a.active {
-            color: var(--primary-yellow);
-        }
-
-        .main-nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-yellow);
-            border-radius: 3px;
-        }
-
-        .header-btn {
-            background-color: var(--primary-yellow);
-            color: #000;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
-        }
-
-        .header-btn:hover {
-            background-color: #e0a400;
-            transform: translateY(-2px);
-        }
-
-        /* --- بخش هیرو (Hero Section) --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            background: linear-gradient(to left, rgba(255,255,255,1) 35%, rgba(255,255,255,0) 70%), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-            overflow: hidden;
-        }
-
-        /* المان‌های تزئینی */
-        .decor-dots {
-            position: absolute;
-            right: 45%;
-            top: 40%;
-            width: 150px;
-            height: 150px;
-            background-image: radial-gradient(#333 2px, transparent 2px);
-            background-size: 15px 15px;
-            opacity: 0.2;
-            z-index: 1;
-        }
-
-        .decor-shape {
-            position: absolute;
-            bottom: -50px;
-            left: -50px;
-            width: 300px;
-            height: 300px;
-            background-color: var(--primary-yellow);
-            transform: rotate(45deg);
-            z-index: 1;
-            opacity: 0.9;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            width: 50%;
-            max-width: 600px;
-        }
-
-        .hero-eyebrow {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .hero-eyebrow span {
-            color: var(--primary-yellow);
-        }
-
-        .hero-title {
-            font-size: clamp(6rem, 12vw, 11rem); /* سایز فوق العاده بزرگ برای ویرا */
-            font-weight: 900;
-            line-height: 0.9;
-            margin-bottom: 20px;
-            color: #000;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .hero-subtitle span {
-            color: var(--primary-yellow);
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 30px;
-        }
-
-        .hero-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            background-color: var(--primary-yellow);
-            color: #000;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: var(--transition);
-        }
-
-        .hero-btn:hover {
-            background-color: #e0a400;
-            gap: 20px; /* افکت حرکت آیکون */
-        }
-
-        .hero-btn .icon-circle {
-            background-color: #000;
-            color: #fff;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        /* --- نوار ویژگی‌ها (Features Bar) --- */
-        .features-wrapper {
-            position: relative;
-            z-index: 20;
-            padding: 0 5%;
-            margin-top: -50px; /* اورلب شدن با هیرو */
-        }
-
-        .features-bar {
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 25px 0;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 1;
-            position: relative;
-        }
-
-        .feature-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            height: 40px;
-            width: 1px;
-            background-color: #eee;
-        }
-
-        .feature-item svg {
-            width: 40px;
-            height: 40px;
-            fill: #222;
-            transition: var(--transition);
-        }
-
-        .feature-item:hover svg {
-            fill: var(--primary-yellow);
-            transform: scale(1.1);
-        }
-
-        /* --- ریسپانسیو برای موبایل --- */
-        @media (max-width: 992px) {
-            .main-nav { display: none; } /* در حالت واقعی باید منوی همبرگری اضافه شود */
-            
-            .hero {
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                padding-top: 50px;
-                background: linear-gradient(to top, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%), 
-                            url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-            }
-
-            .hero-content {
-                width: 100%;
-                margin-top: 20vh;
-            }
-
-            .hero-title { font-size: 6rem; }
-            
-            .features-bar {
-                flex-wrap: wrap;
-                gap: 20px;
-                padding: 20px;
-            }
-            
-            .feature-item { flex: 1 1 40%; }
-            
-            .feature-item:not(:last-child)::after { display: none; }
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- سربرگ -->
-    <header class="site-header">
-        <!-- سمت راست سربرگ (لوگو و منو) -->
-        <div class="header-right">
-            <a href="index.html" class="logo">
-                <!-- به جای این آدرس، لوگوی خودت رو بذار -->
-                <img src="https://via.placeholder.com/150x150/111/fff?text=VIRA" alt="لوگوی ویرا">
-            </a>
-            
-            <nav class="main-nav">
-                <a href="#" class="active">صفحه اصلی</a>
-                <a href="#">نمونه‌کارها</a>
-                <a href="#">درباره ما</a>
-                <a href="#">تماس با ما</a>
-            </nav>
-        </div>
+    <a class="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
 
-        <!-- سمت چپ سربرگ (دکمه مشاوره) -->
-        <a href="#" class="header-btn">
-            مشاوره و سفارش
-            <!-- آیکون هواپیما -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-        </a>
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a class="brand" href="index.html" aria-label="صفحه اصلی ویرا">
+                <img src="assets/images/vira-logo.jpg" alt="لوگوی گروه تبلیغاتی ویرا">
+            </a>
+
+            <details class="mobile-menu">
+                <summary aria-label="باز کردن منو">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </summary>
+
+                <nav class="mobile-nav" aria-label="منوی موبایل">
+                    <a class="active" href="index.html">صفحه اصلی</a>
+                    <a href="services.html">خدمات</a>
+                    <a href="portfolio.html">نمونه‌کارها</a>
+                    <a href="about.html">درباره ما</a>
+                    <a href="contact.html">تماس با ما</a>
+                </nav>
+            </details>
+
+            <nav class="main-nav" aria-label="منوی اصلی">
+                <a class="active" href="index.html" aria-current="page">صفحه اصلی</a>
+                <a href="services.html">خدمات</a>
+                <a href="portfolio.html">نمونه‌کارها</a>
+                <a href="about.html">درباره ما</a>
+                <a href="contact.html">تماس با ما</a>
+            </nav>
+
+            <a class="header-cta" href="contact.html">
+                مشاوره و سفارش
+                <span class="cta-arrow">←</span>
+            </a>
+
+        </div>
     </header>
 
-    <!-- بخش اصلی (هیرو) -->
-    <section class="hero">
-        
-        <!-- المان‌های تزئینی پس‌زمینه -->
-        <div class="decor-shape"></div>
-        <div class="decor-dots"></div>
+    <main id="main-content">
 
-        <!-- محتوای متنی -->
-        <div class="hero-content">
-            <p class="hero-eyebrow">گروه تبلیغاتی <span>ویرا</span></p>
-            <h1 class="hero-title">ویرا</h1>
-            <h2 class="hero-subtitle">درخشش کسب‌وکار <span>شما</span>، تخصص ماست.</h2>
-            <p class="hero-desc">طراحی و ساخت انواع تابلوهای تبلیغاتی با کیفیت عالی</p>
-            
-            <a href="#" class="hero-btn">
-                مشاهده نمونه‌کارها
-                <span class="icon-circle">
-                    <!-- آیکون فلش چپ -->
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </span>
+        <section class="hero" aria-labelledby="hero-title">
+
+            <div class="hero-decoration hero-decoration-dots"></div>
+            <div class="hero-decoration hero-decoration-shape"></div>
+
+            <div class="hero-inner">
+
+                <div class="hero-copy">
+                    <p class="eyebrow">
+                        <span></span>
+                        خلاقیت، کیفیت، ماندگاری
+                    </p>
+
+                    <h1 id="hero-title">
+                        گروه تبلیغاتی
+                        <strong>ویرا</strong>
+                    </h1>
+
+                    <p class="hero-lead">
+                        درخشش کسب‌وکار شما، تخصص ماست.
+                    </p>
+
+                    <p class="hero-description">
+                        از ایده تا اجرا در کنار شما هستیم؛ طراحی و ساخت
+                        تابلوهای تبلیغاتی با کیفیت حرفه‌ای، جزئیات دقیق
+                        و ظاهری ماندگار.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="portfolio.html">
+                            مشاهده نمونه‌کارها
+                            <span>←</span>
+                        </a>
+
+                        <a class="button button-secondary" href="contact.html">
+                            درخواست مشاوره
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="note-line"></span>
+                        <span>ایده شما، امضای بصری کسب‌وکار شماست.</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-frame">
+                        <img
+                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=85"
+                            alt="نمای یک ساختمان تجاری مدرن"
+                            fetchpriority="high">
+
+                        <div class="image-caption">
+                            <span class="caption-mark"></span>
+                            <span>طراحی متمایز برای دیده‌شدن</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-side-label">
+                        VIRA ADVERTISING GROUP
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="features-section" aria-label="ویژگی‌های ویرا">
+            <div class="features-card">
+
+                <article class="feature-item">
+                    <span class="feature-icon">◇</span>
+                    <div>
+                        <h2>کیفیت ماندگار</h2>
+                        <p>توجه به جزئیات و متریال مناسب</p>
+                    </div>
+                </article>
+
+                <article class="feature-item">
+                    <span class="feature-icon">♧</span>
+                    <div>
+                        <h2>پشتیبانی همراه</h2>
+                        <p>از مشاوره تا اجرای پروژه</p>
+                    </div>
+                </article>
+
+                <article class="feature-item">
+                    <span class="feature-icon">ϟ</span>
+                    <div>
+                        <h2>اجرای دقیق</h2>
+                        <p>برنامه‌ریزی و تحویل منظم</p>
+                    </div>
+                </article>
+
+                <article class="feature-item">
+                    <span class="feature-icon">⚙</span>
+                    <div>
+                        <h2>تخصص و خلاقیت</h2>
+                        <p>راهکار متناسب با هویت برند شما</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="section-heading">
+                <p class="section-kicker">چرا ویرا؟</p>
+
+                <h2>
+                    برند شما شایسته
+                    <span>دیده‌شدن</span>
+                    است.
+                </h2>
+
+                <p>
+                    ما کمک می‌کنیم کسب‌وکار شما در نگاه اول،
+                    حرفه‌ای و به‌یادماندنی دیده شود.
+                </p>
+            </div>
+
+            <a class="text-link" href="services.html">
+                آشنایی با خدمات ویرا
+                <span>←</span>
             </a>
-        </div>
-    </section>
+        </section>
 
-    <!-- نوار ویژگی‌ها (زیر هیرو) -->
-    <div class="features-wrapper">
-        <div class="features-bar">
-            <!-- آیکون الماس (کیفیت) -->
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z" fill="none" stroke="#222" stroke-width="2"/></svg>
-            </div>
-            <!-- آیکون هدست (پشتیبانی) -->
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6" fill="none" stroke="#222" stroke-width="2"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" fill="none" stroke="#222" stroke-width="2"/></svg>
-            </div>
-            <!-- آیکون صاعقه (سرعت) -->
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="none" stroke="#222" stroke-width="2"/></svg>
-            </div>
-            <!-- آیکون چرخ‌دنده (تخصص) -->
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="#222" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" fill="none" stroke="#222" stroke-width="2"/></svg>
-            </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a class="footer-brand" href="index.html">
+                گروه تبلیغاتی <strong>ویرا</strong>
+            </a>
+
+            <p>طراحی و اجرای هویت بصری ماندگار برای کسب‌وکارها</p>
+
+            <a href="contact.html">ارتباط با ما ←</a>
         </div>
-    </div>
+
+        <div class="footer-bottom">
+            © تمامی حقوق برای گروه تبلیغاتی ویرا محفوظ است.
+        </div>
+    </footer>
 
 </body>
 </html>
