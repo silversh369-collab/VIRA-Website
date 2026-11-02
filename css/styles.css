@@ -493,29 +493,39 @@ button, input, textarea, select { font-family: inherit; }
 /* =========================================
    10. ریسپانسیو (موبایل و تبلت)
 ========================================= */
+/* =========================================
+   10. ریسپانسیو (موبایل و تبلت)
+========================================= */
 @media (max-width: 992px) {
     .hero {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        padding-top: 50px;
-        /* گرادیانت رو به بالا تغییر میکنه برای موبایل */
-        background: linear-gradient(to top, rgba(255,255,255,1) 60%, rgba(255,255,255,0.7) 100%), 
+        padding: 80px 5% 120px; /* فاصله بالا و پایین */
+        min-height: auto;
+        /* تصویر پس‌زمینه با یک لایه سفید شفاف برای خوانایی متن در موبایل */
+        background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), 
                     url('assets/images/hero.jpg') center/cover no-repeat;
     }
 
     .hero-content {
         width: 100%;
-        margin-top: 15vh;
+        margin-top: 0; /* حذف فاصله اضافه قبلی */
     }
 
-    .hero-title { font-size: 7rem; }
-    .decor-dots { display: none; }
+    .hero-title { 
+        font-size: 6rem; /* سایز متن ویرا در موبایل */
+    }
+
+    /* مخفی کردن المان‌های تزئینی در موبایل تا متن‌ها رو خراب نکنن */
+    .decor-dots, .decor-shape { 
+        display: none; 
+    }
     
     .features-bar {
         flex-wrap: wrap;
         gap: 20px;
-        padding: 20px;
+        padding: 25px 15px;
     }
     
     .feature-item { flex: 1 1 40%; }
@@ -530,11 +540,12 @@ button, input, textarea, select { font-family: inherit; }
     .site-header {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        padding: 15px 5%;
     }
     
+    /* مخفی کردن منو در موبایل (فعلا) */
     .main-nav {
-        display: none; /* برای موبایل باید منوی همبرگری اضافه بشه */
+        display: none; 
     }
 
     .header-btn {
@@ -542,10 +553,14 @@ button, input, textarea, select { font-family: inherit; }
         justify-content: center;
     }
 
-    .hero-title { font-size: 5.5rem; }
-    .hero-subtitle { font-size: 1.2rem; }
+    .hero-title { font-size: 4.5rem; } /* کوچک‌تر شدن بیشتر برای گوشی */
+    .hero-eyebrow { font-size: 1.3rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .hero-desc { font-size: 0.95rem; }
     
-    .features-wrapper { margin-top: -30px; }
+    .features-wrapper { 
+        margin-top: -40px; /* اورلب ملایم‌تر */
+    }
     
     .service-list, .portfolio-grid, .process-list {
         grid-template-columns: 1fr;
