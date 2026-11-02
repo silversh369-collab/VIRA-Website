@@ -55,7 +55,7 @@ button {
 header {
     width: 100%;
     min-height: 90px;
-    padding: 15px 7%;
+    padding: 12px 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,24 +67,20 @@ header {
     z-index: 100;
 }
 
+/* لوگوی اصلی ویرا */
+
 .logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    color: var(--primary);
-    font-weight: bold;
-    line-height: 1.5;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.logo span {
-    font-family: Georgia, serif;
-    font-size: 29px;
-    letter-spacing: 3px;
-}
-
-.logo small {
-    font-size: 11px;
-    color: var(--text);
+.logo img {
+    display: block;
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
 }
 
 /* منوی سایت */
@@ -105,10 +101,11 @@ nav a:hover {
     color: var(--primary);
 }
 
-/* دکمه‌ها */
+/* دکمه سربرگ */
 
-header button,
+.header-button,
 form button {
+    display: inline-block;
     background: var(--primary);
     color: #ffffff;
     border: none;
@@ -118,7 +115,7 @@ form button {
     transition: 0.3s;
 }
 
-header button:hover,
+.header-button:hover,
 form button:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
@@ -152,10 +149,6 @@ form button:hover {
     font-size: clamp(35px, 5vw, 58px);
     line-height: 1.5;
     margin: 15px 0;
-    color: var(--text);
-}
-
-.hero-content h1::first-line {
     color: var(--text);
 }
 
@@ -349,6 +342,11 @@ footer p {
         padding: 15px 5%;
     }
 
+    .logo img {
+        width: 68px;
+        height: 68px;
+    }
+
     nav {
         gap: 10px 16px;
     }
@@ -357,8 +355,9 @@ footer p {
         font-size: 12px;
     }
 
-    header button {
+    .header-button {
         width: 100%;
+        text-align: center;
     }
 
     .hero {
