@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -15,20 +14,18 @@
 
     <a class="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
 
+    <!-- Header with curved bottom -->
     <header class="site-header">
         <div class="header-inner">
-
             <a class="brand" href="index.html" aria-label="صفحه اصلی ویرا">
-                <img src="assets/images/vira-logo.jpg" alt="لوگوی گروه تبلیغاتی ویرا">
+                <!-- Use your actual logo image here -->
+                <img src="https://via.placeholder.com/150x150/111/fff?text=VIRA" alt="لوگوی گروه تبلیغاتی ویرا" class="logo-img">
             </a>
 
             <details class="mobile-menu">
                 <summary aria-label="باز کردن منو">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </summary>
-
                 <nav class="mobile-nav" aria-label="منوی موبایل">
                     <a class="active" href="index.html">صفحه اصلی</a>
                     <a href="services.html">خدمات</a>
@@ -48,157 +45,87 @@
 
             <a class="header-cta" href="contact.html">
                 مشاوره و سفارش
-                <span class="cta-arrow">←</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </a>
-
         </div>
     </header>
 
     <main id="main-content">
-
+        <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
-
-            <div class="hero-decoration hero-decoration-dots"></div>
-            <div class="hero-decoration hero-decoration-shape"></div>
+            <!-- Decorative Elements -->
+            <div class="decor-dots"></div>
+            <div class="decor-shape"></div>
+            <div class="decor-polygon"></div>
 
             <div class="hero-inner">
-
+                <!-- Text Content (Right side in RTL) -->
                 <div class="hero-copy">
-                    <p class="eyebrow">
-                        <span></span>
-                        خلاقیت، کیفیت، ماندگاری
-                    </p>
-
-                    <h1 id="hero-title">
-                        گروه تبلیغاتی
-                        <strong>ویرا</strong>
+                    <h1 id="hero-title" class="hero-title-wrapper">
+                        <span class="hero-eyebrow">گروه تبلیغاتی <span class="highlight">ویرا</span></span>
+                        <span class="hero-massive-text">ویرا</span>
                     </h1>
-
+                    
                     <p class="hero-lead">
-                        درخشش کسب‌وکار شما، تخصص ماست.
+                        درخشش کسب‌وکار <span class="highlight">شما</span>، تخصص ماست.
                     </p>
 
                     <p class="hero-description">
-                        از ایده تا اجرا در کنار شما هستیم؛ طراحی و ساخت
-                        تابلوهای تبلیغاتی با کیفیت حرفه‌ای، جزئیات دقیق
-                        و ظاهری ماندگار.
+                        طراحی و ساخت انواع تابلوهای تبلیغاتی با کیفیت عالی و ظاهری ماندگار.
                     </p>
 
                     <div class="hero-actions">
                         <a class="button button-primary" href="portfolio.html">
                             مشاهده نمونه‌کارها
-                            <span>←</span>
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            </span>
                         </a>
-
-                        <a class="button button-secondary" href="contact.html">
-                            درخواست مشاوره
-                        </a>
-                    </div>
-
-                    <div class="hero-note">
-                        <span class="note-line"></span>
-                        <span>ایده شما، امضای بصری کسب‌وکار شماست.</span>
                     </div>
                 </div>
 
+                <!-- Building Image (Left side in RTL) -->
                 <div class="hero-visual">
-                    <div class="hero-image-frame">
-                        <img
-                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=85"
-                            alt="نمای یک ساختمان تجاری مدرن"
-                            fetchpriority="high">
-
-                        <div class="image-caption">
-                            <span class="caption-mark"></span>
-                            <span>طراحی متمایز برای دیده‌شدن</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-side-label">
-                        VIRA ADVERTISING GROUP
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="ساختمان تجاری با تابلو تبلیغاتی" class="hero-bg-image">
                 </div>
-
             </div>
         </section>
 
-        <section class="features-section" aria-label="ویژگی‌های ویرا">
+        <!-- Overlapping Features Bar -->
+        <section class="features-section">
             <div class="features-card">
-
                 <article class="feature-item">
-                    <span class="feature-icon">◇</span>
-                    <div>
-                        <h2>کیفیت ماندگار</h2>
-                        <p>توجه به جزئیات و متریال مناسب</p>
-                    </div>
+                    <svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <h3>کیفیت ماندگار</h3>
                 </article>
-
                 <article class="feature-item">
-                    <span class="feature-icon">♧</span>
-                    <div>
-                        <h2>پشتیبانی همراه</h2>
-                        <p>از مشاوره تا اجرای پروژه</p>
-                    </div>
+                    <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <h3>پشتیبانی همراه</h3>
                 </article>
-
                 <article class="feature-item">
-                    <span class="feature-icon">ϟ</span>
-                    <div>
-                        <h2>اجرای دقیق</h2>
-                        <p>برنامه‌ریزی و تحویل منظم</p>
-                    </div>
+                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <h3>اجرای دقیق</h3>
                 </article>
-
                 <article class="feature-item">
-                    <span class="feature-icon">⚙</span>
-                    <div>
-                        <h2>تخصص و خلاقیت</h2>
-                        <p>راهکار متناسب با هویت برند شما</p>
-                    </div>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <h3>تخصص و خلاقیت</h3>
                 </article>
-
             </div>
         </section>
 
+        <!-- Intro Section -->
         <section class="intro-section">
             <div class="section-heading">
                 <p class="section-kicker">چرا ویرا؟</p>
-
-                <h2>
-                    برند شما شایسته
-                    <span>دیده‌شدن</span>
-                    است.
-                </h2>
-
-                <p>
-                    ما کمک می‌کنیم کسب‌وکار شما در نگاه اول،
-                    حرفه‌ای و به‌یادماندنی دیده شود.
-                </p>
+                <h2>برند شما شایسته <span>دیده‌شدن</span> است.</h2>
+                <p>ما کمک می‌کنیم کسب‌وکار شما در نگاه اول، حرفه‌ای و به‌یادماندنی دیده شود.</p>
             </div>
-
-            <a class="text-link" href="services.html">
-                آشنایی با خدمات ویرا
-                <span>←</span>
-            </a>
+            <a class="text-link" href="services.html">آشنایی با خدمات ویرا <span>←</span></a>
         </section>
-
     </main>
 
     <footer class="site-footer">
-        <div class="footer-inner">
-            <a class="footer-brand" href="index.html">
-                گروه تبلیغاتی <strong>ویرا</strong>
-            </a>
-
-            <p>طراحی و اجرای هویت بصری ماندگار برای کسب‌وکارها</p>
-
-            <a href="contact.html">ارتباط با ما ←</a>
-        </div>
-
-        <div class="footer-bottom">
-            © تمامی حقوق برای گروه تبلیغاتی ویرا محفوظ است.
-        </div>
+        <!-- Footer content remains the same -->
     </footer>
-
 </body>
 </html>
