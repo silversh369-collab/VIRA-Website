@@ -1,17 +1,13 @@
 /* =========================================
-   VIRA ADVERTISING GROUP - Main Stylesheet
+   VIRA ADVERTISING GROUP - EXACT MATCH
 ========================================= */
 
 :root {
     --yellow: #f4b400;
     --yellow-dark: #d9a000;
     --ink: #111111;
-    --muted: #555555;
     --white: #ffffff;
-    --soft: #f9f9f9;
-    --line: #eaeaea;
-    --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    --content-width: 1300px;
+    --content-width: 1400px;
 }
 
 * {
@@ -31,34 +27,41 @@ body {
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
-/* --- Header --- */
+/* --- هدر (دقیقا مثل عکس با گوشه‌های گرد) --- */
 .site-header {
     background: var(--white);
     position: relative;
     z-index: 100;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 .header-inner {
     max-width: var(--content-width);
     margin: 0 auto;
-    min-height: 90px;
-    padding: 0 5%;
+    min-height: 100px;
+    padding: 0 3%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+.logo-img { 
+    width: 85px; 
+    height: 85px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #eee;
+}
 
-.main-nav { display: flex; gap: 35px; }
+.main-nav { display: flex; gap: 40px; }
 .main-nav a {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
+    color: #333;
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 
 .main-nav a.active { color: var(--yellow-dark); }
@@ -73,115 +76,113 @@ img { display: block; max-width: 100%; }
 
 .header-cta {
     background: var(--yellow);
-    padding: 12px 25px;
+    color: var(--ink);
+    padding: 12px 30px;
     border-radius: 50px;
-    font-weight: 700;
+    font-weight: 800;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     transition: 0.3s;
+    font-size: 15px;
 }
 .header-cta:hover { background: var(--yellow-dark); transform: translateY(-2px); }
 
-/* Mobile Menu (Hidden on Desktop) */
-.mobile-menu { display: none; }
-
-/* --- Hero Section --- */
+/* --- بخش اصلی (Hero) --- */
 .hero {
     position: relative;
-    background: var(--white);
-    padding: 60px 0 120px;
-    overflow: hidden;
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
+    padding: 0 5%;
+    /* عکس پس‌زمینه ساختمان */
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=85');
+    background-size: cover;
+    background-position: center left; /* عکس متمایل به سمت چپ باشه */
+    overflow: hidden;
 }
 
-/* Decorative Elements */
+/* گرادیانت سفید (محو کردن سمت راست عکس برای خوانایی متن) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* از سمت چپ شفاف به سمت راست سفید */
+    background: linear-gradient(to left, rgba(255,255,255,1) 35%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+
+/* شکل زرد گوشه سمت چپ */
+.decor-shape-left {
+    position: absolute;
+    left: -50px;
+    bottom: 0;
+    width: 300px;
+    height: 80%;
+    background: var(--yellow);
+    z-index: 2;
+    clip-path: polygon(0 100%, 100% 100%, 0 0);
+    opacity: 0.9;
+}
+
+/* نقطه‌های تزئینی */
 .decor-dots {
     position: absolute;
     right: 45%;
-    top: 30%;
-    width: 200px; height: 200px;
-    background-image: radial-gradient(#ccc 2px, transparent 2px);
-    background-size: 15px 15px;
-    opacity: 0.6;
+    top: 35%;
+    width: 250px; height: 250px;
+    background-image: radial-gradient(#999 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.4;
     z-index: 1;
 }
 
-.decor-shape {
-    position: absolute;
-    left: -50px;
-    top: 0;
-    width: 150px; height: 100%;
-    background: var(--yellow);
-    z-index: 1;
-    clip-path: polygon(0 0, 100% 0, 0 100%); /* Creates the angled shape */
-}
-
-.hero-inner {
-    max-width: var(--content-width);
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 5%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
+/* محتوای متنی */
+.hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    max-width: 600px;
+    margin-right: 5%; /* فاصله از سمت راست */
 }
 
-/* Typography */
-.hero-copy {
-    position: relative;
-    z-index: 5;
-}
-
-.hero-title-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
+.hero-title-wrapper { display: flex; flex-direction: column; margin-bottom: 20px; }
 
 .hero-eyebrow {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: -10px;
-    z-index: 2;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: -20px;
 }
 
 .hero-massive-text {
-    font-size: clamp(8rem, 15vw, 14rem); /* The massive VIRA text */
+    font-size: clamp(8rem, 14vw, 13rem); /* سایز خیلی بزرگ ویرا */
     font-weight: 900;
     line-height: 1;
-    color: var(--ink);
-    z-index: 1;
+    letter-spacing: -5px;
 }
 
-.highlight { color: var(--yellow-dark); }
+.text-yellow { color: var(--yellow-dark); }
 
 .hero-lead {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 800;
     margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .hero-description {
-    font-size: 1.1rem;
-    color: var(--muted);
-    max-width: 450px;
-    margin-bottom: 35px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 40px;
 }
 
-/* Buttons */
+/* دکمه زرد با آیکون مشکی */
 .button-primary {
     display: inline-flex;
     align-items: center;
     gap: 15px;
     background: var(--yellow);
     color: var(--ink);
-    padding: 12px 30px;
+    padding: 10px 25px;
     border-radius: 50px;
     font-weight: 800;
     font-size: 1.1rem;
@@ -193,36 +194,16 @@ img { display: block; max-width: 100%; }
 .btn-icon {
     background: var(--ink);
     color: var(--white);
-    width: 30px; height: 30px;
+    width: 32px; height: 32px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 50%;
 }
 
-/* Hero Image */
-.hero-visual {
-    position: relative;
-    z-index: 3;
-    height: 100%;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-}
-
-.hero-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    /* Optional: mask the image to blend it */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-/* --- Overlapping Features Bar --- */
+/* --- نوار ویژگی‌های سفید (روی هیرو میفته) --- */
 .features-section {
     position: relative;
-    z-index: 10;
-    margin-top: -80px; /* Pulls it up over the hero */
+    z-index: 20;
+    margin-top: -70px;
     padding: 0 5%;
 }
 
@@ -231,32 +212,31 @@ img { display: block; max-width: 100%; }
     margin: 0 auto;
     background: var(--white);
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 25px 0;
+    padding: 30px 0;
 }
 
 .feature-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
     position: relative;
 }
 
+/* خطوط جدا کننده */
 .feature-item:not(:last-child)::after {
     content: '';
     position: absolute;
     left: 0;
-    height: 60%;
+    height: 50px;
     width: 1px;
-    background: var(--line);
+    background: #eee;
 }
 
 .feature-item svg {
-    width: 40px; height: 40px;
+    width: 45px; height: 45px;
     color: var(--ink);
     transition: 0.3s;
 }
@@ -266,57 +246,34 @@ img { display: block; max-width: 100%; }
     transform: scale(1.1);
 }
 
-.feature-item h3 { font-size: 15px; font-weight: 700; }
-
-/* --- Intro Section --- */
-.intro-section {
-    padding: 100px 5%;
-    text-align: center;
-}
-
-.section-heading h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.text-link {
-    display: inline-block;
-    margin-top: 20px;
-    font-weight: 700;
-    color: var(--yellow-dark);
-    border-bottom: 2px solid var(--yellow);
-}
-
 /* =========================================
-   Responsive Design (Mobile & Tablet)
+   ریسپانسیو برای موبایل
 ========================================= */
 @media (max-width: 992px) {
-    .hero-inner { grid-template-columns: 1fr; }
+    .main-nav { display: none; } /* منوی موبایل */
     
-    .hero-visual {
-        grid-row: 1; /* Image on top on mobile */
-        min-height: 350px;
-        margin-bottom: 30px;
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 50px;
+        /* در موبایل کل پس‌زمینه سفید میشه تا متن دیده بشه */
+        background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80');
     }
 
-    .decor-dots { right: 10%; top: 40%; }
-    .decor-shape { display: none; }
-    
-    .hero-massive-text { text-align: center; }
-    .hero-copy { text-align: center; }
-    .hero-description { margin: 0 auto 30px; }
-    
-    .features-card { grid-template-columns: repeat(2, 1fr); gap: 20px 0; padding: 30px 0; }
-    .feature-item:nth-child(2)::after { display: none; }
-}
+    .hero-content {
+        margin: 0 auto;
+        margin-top: 100px;
+    }
 
-@media (max-width: 768px) {
-    .main-nav, .header-cta { display: none; }
-    .mobile-menu { display: block; }
+    .hero-massive-text { font-size: 7rem; }
+    .hero-eyebrow { font-size: 1.6rem; margin-bottom: -10px; }
+    .hero-lead { font-size: 1.3rem; }
+    .hero-description { font-size: 1rem; }
     
-    .hero-massive-text { font-size: 6rem; }
-    .hero-eyebrow { font-size: 1.5rem; }
-    .hero-lead { font-size: 1.2rem; }
+    .hero-overlay, .decor-shape-left { display: none; }
     
     .features-section { margin-top: -40px; }
+    .features-card { grid-template-columns: repeat(2, 1fr); gap: 30px 0; padding: 30px 0; }
+    .feature-item:nth-child(2)::after { display: none; }
 }
