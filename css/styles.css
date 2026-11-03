@@ -1,20 +1,16 @@
 /* =========================================
-   VIRA ADVERTISING GROUP - White & Gold Theme
+   VIRA ADVERTISING GROUP - Exact Layout Copy
 ========================================= */
 
 :root {
-    /* پالت طلایی لوکس */
-    --gold-light: #fcf6ba;
-    --gold: #d4af37;
-    --gold-dark: #b8860b;
-    --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-    
+    --primary-yellow: #f4b400;
+    --primary-dark: #d9a000;
     --ink: #111111;
     --muted: #555555;
     --white: #ffffff;
     --border: #eaeaea;
     --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    --max-width: 1350px;
+    --max-width: 1400px;
 }
 
 * {
@@ -34,29 +30,15 @@ body {
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
-/* 🛠 کلاس‌های افکت متن طلایی */
-.gold-text {
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-}
-
-.gold-text-solid {
-    color: var(--gold-dark);
-    font-weight: 900;
-}
-
 /* =========================================
-   هدر سایت (Header)
+   هدر سایت
 ========================================= */
 .site-header {
     background: var(--white);
     position: relative;
     z-index: 100;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.04);
 }
 
@@ -71,12 +53,11 @@ img { display: block; max-width: 100%; }
 }
 
 .logo-img {
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--gold-light);
-    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+    border: 2px solid var(--border);
 }
 
 .main-nav { display: flex; gap: 35px; }
@@ -86,22 +67,20 @@ img { display: block; max-width: 100%; }
     color: #333;
     position: relative;
     padding-bottom: 5px;
-    transition: 0.3s;
 }
-.main-nav a:hover { color: var(--gold-dark); }
-.main-nav a.active { color: var(--gold-dark); }
+.main-nav a.active { color: var(--primary-dark); }
 .main-nav a.active::after {
     content: '';
     position: absolute;
     bottom: 0; right: 0;
     width: 100%; height: 3px;
-    background: var(--gold-gradient);
+    background: var(--primary-yellow);
     border-radius: 2px;
 }
 
 .header-cta {
-    background: var(--gold-gradient);
-    color: #111;
+    background: var(--primary-yellow);
+    color: var(--ink);
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 800;
@@ -110,84 +89,109 @@ img { display: block; max-width: 100%; }
     align-items: center;
     gap: 10px;
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
-.header-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
+.header-cta:hover { background: var(--primary-dark); }
 
 /* منوی موبایل */
 .mobile-menu { display: none; position: relative; }
-.mobile-menu summary { cursor: pointer; list-style: none; padding: 5px; color: var(--gold-dark); }
+.mobile-menu summary { list-style: none; cursor: pointer; padding: 5px; }
 .mobile-menu summary::-webkit-details-marker { display: none; }
 .mobile-nav {
     position: absolute;
-    top: 55px; left: 0;
-    width: 220px;
+    top: 60px; left: 0;
+    width: 250px;
     background: var(--white);
-    border: 1px solid var(--gold-light);
+    border: 1px solid var(--border);
     border-radius: 15px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     z-index: 200;
 }
-.mobile-nav a { font-weight: 700; padding: 8px; border-radius: 8px; }
-.mobile-nav a.active { color: var(--gold-dark); background: #fffcf5; }
+.mobile-nav a { font-weight: 700; padding: 12px 15px; border-radius: 10px; }
+.mobile-nav a:hover, .mobile-nav a.active { background: #f5f5f5; color: var(--primary-dark); }
+.mobile-cta { color: var(--primary-dark) !important; font-weight: 900 !important; }
 
 /* =========================================
-   بخش هیرو (Hero Section)
+   بخش هیرو (دقیقاً مثل عکس)
 ========================================= */
 .hero {
     position: relative;
     background: var(--white);
     overflow: hidden;
-    padding: 50px 0 100px;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
 }
 
-/* المان‌های تزئینی طلایی */
-.decor-lines {
+/* 🛠 عکس ساختمون در پس‌زمینه سمت چپ */
+.hero-bg-image {
     position: absolute;
-    left: 0; top: 15%;
-    width: 150px; height: 70%;
-    border-right: 3px solid var(--gold);
-    border-top: 3px solid var(--gold);
-    transform: skewY(-20deg);
-    opacity: 0.2;
+    left: 0;
+    top: 0;
+    width: 60%; /* عکس ۶۰ درصد سمت چپ رو میگیره */
+    height: 100%;
+    /* 👇 آدرس عکس ساختمون خودت رو اینجا بذار 👇 */
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85');
+    background-size: cover;
+    background-position: center;
     z-index: 1;
 }
-.decor-lines::after {
-    content: '';
+
+/* لایه گرادیانت برای محو کردن عکس در سمت راست */
+.hero-gradient-overlay {
     position: absolute;
-    left: 20px; top: 20px;
-    width: 100%; height: 100%;
-    border-right: 3px solid var(--gold);
-    border-top: 3px solid var(--gold);
+    inset: 0;
+    /* گرادیانت از سمت راست (سفید) به سمت چپ (شفاف) */
+    background: linear-gradient(to left, rgba(255,255,255,1) 40%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0) 100%);
+    z-index: 2;
 }
 
-.decor-dots {
+/* شکل زرد بزرگ گوشه سمت چپ */
+.yellow-shape {
     position: absolute;
-    right: 45%; top: 30%;
-    width: 200px; height: 200px;
-    background-image: radial-gradient(var(--gold) 2px, transparent 2px);
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: var(--primary-yellow);
+    z-index: 3;
+    /* ایجاد فرم مثلثی/چندضلعی با کلیپ پث */
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    opacity: 0.95;
+}
+
+/* نقطه‌های تزئینی پشت متن */
+.dots-pattern {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    width: 250px;
+    height: 250px;
+    background-image: radial-gradient(#999 2.5px, transparent 2.5px);
     background-size: 20px 20px;
-    opacity: 0.3;
-    z-index: 1;
+    opacity: 0.4;
+    z-index: 3;
 }
 
 .hero-inner {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr; /* فضای بیشتر به متن */
-    gap: 20px;
-    align-items: center;
+    padding: 60px 20px;
+    width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start; /* چون RTL هستیم، متن میره سمت راست */
 }
 
-.hero-copy { position: relative; z-index: 5; }
+.hero-copy {
+    width: 50%; /* متن نصف سمت راست رو میگیره */
+    max-width: 600px;
+    margin-right: 5%; /* فاصله از سمت راست */
+}
 
 .hero-title-wrapper {
     display: flex;
@@ -196,48 +200,49 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-eyebrow {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
     font-weight: 800;
-    margin-bottom: -15px;
+    margin-bottom: -20px;
     z-index: 2;
 }
 
 .hero-massive-text {
-    font-size: clamp(7rem, 14vw, 14rem);
+    font-size: clamp(8rem, 15vw, 14rem);
     font-weight: 900;
     line-height: 1;
-    letter-spacing: -4px;
+    letter-spacing: -5px;
     z-index: 1;
 }
 
+.text-yellow { color: var(--primary-dark); }
+
 .hero-lead {
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
     font-weight: 800;
     margin-bottom: 15px;
 }
 
 .hero-description {
-    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: var(--muted);
     margin-bottom: 35px;
     max-width: 90%;
 }
 
-/* دکمه طلایی */
+/* دکمه */
 .button-primary {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-    background: var(--gold-gradient);
+    background: var(--primary-yellow);
     color: var(--ink);
     padding: 12px 30px;
     border-radius: 50px;
     font-weight: 800;
     font-size: clamp(1rem, 1.5vw, 1.1rem);
     transition: 0.3s;
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
 }
-.button-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5); }
+.button-primary:hover { background: var(--primary-dark); gap: 20px; }
 .btn-icon {
     background: var(--ink);
     color: var(--white);
@@ -246,30 +251,13 @@ img { display: block; max-width: 100%; }
     border-radius: 50%;
 }
 
-/* تصویر ساختمان (ترکیب با پس‌زمینه سفید) */
-.hero-visual {
-    position: relative;
-    z-index: 3;
-    /* محو کردن لبه چپ عکس برای ترکیب با پس زمینه */
-    mask-image: linear-gradient(to left, black 75%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, black 75%, transparent 100%);
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    /* حذف سایه و گردی گوشه چون عکس داره محو میشه */
-}
-
 /* =========================================
-   نوار ویژگی‌ها (Features Bar)
+   نوار ویژگی‌ها
 ========================================= */
 .features-section {
     position: relative;
-    z-index: 10;
-    margin-top: -60px;
+    z-index: 20;
+    margin-top: -70px;
     padding: 0 20px;
 }
 
@@ -277,12 +265,11 @@ img { display: block; max-width: 100%; }
     max-width: var(--max-width);
     margin: 0 auto;
     background: var(--white);
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 30px 0;
-    border: 1px solid var(--gold-light);
 }
 
 .feature-item {
@@ -300,94 +287,92 @@ img { display: block; max-width: 100%; }
     left: 0; top: 50%;
     transform: translateY(-50%);
     height: 50px; width: 1px;
-    background: var(--gold-light);
+    background: var(--border);
 }
 
-/* آیکون‌ها طلایی بشن */
 .feature-item svg {
     width: 40px; height: 40px;
-    color: var(--gold-dark);
-    transition: 0.3s ease;
+    color: var(--ink);
 }
-
-.feature-item:hover svg {
-    color: var(--gold);
-    transform: scale(1.1);
-}
-
 .feature-item h3 { font-size: 15px; font-weight: 700; }
 
 /* =========================================
-   ریسپانسیو موبایل (اصلاح شده برای تم طلایی)
+   ریسپانسیو موبایل (تطبیق با ساختار جدید)
 ========================================= */
 
 @media (max-width: 992px) {
     .main-nav, .desktop-only { display: none; }
     .mobile-menu { display: block; }
 
-    .hero { padding: 20px 0 40px; }
-    
-    .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
+    .hero { 
+        padding: 0 0 40px; 
+        min-height: auto;
+        flex-direction: column;
     }
 
-    .hero-visual { 
-        order: -1; 
-        margin-top: 10px;
-        /* در موبایل محو کردن رو از پایین انجام میدیم */
-        mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    /* در موبایل عکس پس‌زمینه رو مخفی میکنیم تا متن‌ها خراب نشن */
+    .hero-bg-image, .hero-gradient-overlay, .yellow-shape, .dots-pattern { 
+        display: none; 
+    }
+
+    .hero-inner {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
     }
     
     .hero-copy {
+        width: 100%;
+        margin-right: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 0;
     }
 
-    .decor-lines, .decor-dots { display: none; }
+    /* عکس رو به صورت یک تگ واقعی در موبایل بالای متن قرار میدیم */
+    /* (چون در HTML عکس بک‌گراند بود، در موبایل به جای خالی نیاز داریم) */
+    .hero-inner::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 250px;
+        /* 👇 آدرس عکس خودت رو اینجا هم بذار 👇 */
+        background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80');
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        box-shadow: var(--shadow);
+    }
 
     .hero-title-wrapper { margin-bottom: 10px; }
     .hero-eyebrow { margin-bottom: 0; font-size: 1.2rem; }
-    .hero-massive-text { font-size: clamp(4.5rem, 16vw, 7rem); letter-spacing: -1px; }
+    .hero-massive-text { font-size: 5rem; letter-spacing: -2px; }
     .hero-lead { margin-bottom: 10px; }
     .hero-description { max-width: 100%; margin-bottom: 25px; }
 
     .button-primary {
-        padding: 10px 20px;
-        font-size: 1rem;
         width: 100%;
         max-width: 280px;
     }
 
-    .features-section { 
-        margin-top: 0; 
-        padding: 0 15px 40px; 
-        position: relative;
-        z-index: 1; 
-    }
-    
+    /* چیدمان کارت ویژگی‌ها */
+    .features-section { margin-top: 20px; }
     .features-card { 
         grid-template-columns: repeat(2, 1fr); 
         gap: 15px 0; 
         padding: 20px 10px; 
     }
-    
-    .feature-item { padding: 10px 0; }
-    .feature-item:not(:last-child)::after { width: 1px; height: 40px; background: var(--gold-light); }
+    .feature-item:not(:last-child)::after { height: 40px; }
     .feature-item:nth-child(2)::after { display: none; } 
-    
     .feature-item:nth-child(1), .feature-item:nth-child(2) {
-        border-bottom: 1px solid var(--gold-light);
+        border-bottom: 1px solid var(--border);
         padding-bottom: 20px;
     }
 }
 
 @media (max-width: 576px) {
-    .hero-massive-text { font-size: 4.5rem; } 
+    .hero-massive-text { font-size: 4rem; } 
     .feature-item svg { width: 32px; height: 32px; }
     .feature-item h3 { font-size: 13px; }
 }
