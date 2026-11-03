@@ -273,35 +273,31 @@ img { display: block; max-width: 100%; }
     color: var(--ink);
 }
 .feature-item h3 { font-size: 15px; font-weight: 700; }
-
 /* =========================================
-   ریسپانسیو موبایل (اصلاح نهایی)
+   ریسپانسیو موبایل (اصلاح کامل تداخل و چیدمان)
 ========================================= */
 
 @media (max-width: 992px) {
     .main-nav, .desktop-only { display: none; }
     .mobile-menu { display: block; }
 
-    .hero { padding: 10px 0 40px; } /* فاصله بالا و پایین بخش هیرو کم شد */
+    .hero { padding: 10px 0 40px; }
     
     .hero-inner {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 15px; /* فاصله بین عکس و متن کمتر شد */
+        gap: 20px;
     }
 
-    /* اصلاح باکس عکس */
     .hero-visual { 
         order: -1; 
         margin-top: 10px;
-        margin-bottom: 0; /* حذف فاصله اضافی پایین عکس */
-        border-radius: 15px; /* گردی گوشه‌ها */
-        /* min-height رو حذف کردیم تا باکس دقیقا هم اندازه عکس بشه */
+        border-radius: 15px; 
     }
 
     .hero-image {
         width: 100%;
-        height: auto; /* اجازه میده ارتفاع بر اساس عرض عکس تنظیم بشه */
+        height: auto; 
         display: block;
     }
     
@@ -314,31 +310,12 @@ img { display: block; max-width: 100%; }
 
     .hero-decoration-shape, .hero-decoration-dots { display: none; }
 
-    /* تنظیم فاصله‌ها و سایز متن‌ها */
-    .hero-title-wrapper {
-        margin-bottom: 10px; /* فاصله زیر عنوان کم شد */
-    }
+    .hero-title-wrapper { margin-bottom: 10px; }
+    .hero-eyebrow { margin-bottom: 0; font-size: 1.2rem; }
+    .hero-massive-text { font-size: clamp(4rem, 15vw, 7rem); letter-spacing: -1px; }
+    .hero-lead { margin-bottom: 10px; }
+    .hero-description { max-width: 100%; margin-bottom: 20px; }
 
-    .hero-eyebrow {
-        margin-bottom: 0; 
-        font-size: 1.2rem;
-    }
-
-    .hero-massive-text {
-        font-size: clamp(4rem, 15vw, 7rem); 
-        letter-spacing: -1px;
-    }
-
-    .hero-lead {
-        margin-bottom: 10px;
-    }
-
-    .hero-description { 
-        max-width: 100%; 
-        margin-bottom: 20px; 
-    }
-
-    /* دکمه */
     .button-primary {
         padding: 10px 20px;
         font-size: 1rem;
@@ -346,48 +323,44 @@ img { display: block; max-width: 100%; }
         max-width: 280px;
     }
 
+    /* 🛠 رفع مشکل تداخل: حذف حاشیه منفی در موبایل */
+    .features-section { 
+        margin-top: 30px; /* فاصله گرفتن از دکمه */
+        padding: 0 15px;
+    }
+    
+    /* چیدمان ۲ در ۲ برای ویژگی‌ها در موبایل */
     .features-card { 
         grid-template-columns: repeat(2, 1fr); 
-        gap: 20px 0; 
+        gap: 15px 0; 
         padding: 20px 10px; 
     }
-    .feature-item:nth-child(2)::after { display: none; }
+    
+    .feature-item { 
+        padding: 10px 0; 
+    }
+
+    /* خط جدا کننده عمودی */
+    .feature-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 0; top: 50%;
+        transform: translateY(-50%);
+        height: 40px; width: 1px;
+        background: var(--border);
+    }
+    .feature-item:nth-child(2)::after { display: none; } 
+    
+    /* خط جدا کننده افقی بین ردیف اول و دوم */
+    .feature-item:nth-child(1), .feature-item:nth-child(2) {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 576px) {
     .hero-massive-text { font-size: 4.5rem; } 
     
-    .features-card { grid-template-columns: 1fr; padding: 15px 0; }
-    .feature-item { padding: 15px 0; }
-    .feature-item::after { display: none; }
-    .feature-item:not(:last-child) { border-bottom: 1px solid var(--border); }
-}
-
-    /* دکمه وسط چین و خوش اندازه */
-    .button-primary {
-        padding: 10px 20px;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .features-card { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px 0; 
-        padding: 20px 10px; 
-    }
-    .feature-item:nth-child(2)::after { display: none; }
-}
-
-@media (max-width: 576px) {
-    /* توی گوشی‌های کوچیک‌تر، متن ویرا یه ذره کوچیک‌تر میشه */
-    .hero-massive-text { font-size: 4.5rem; } 
-    
-    .features-card { grid-template-columns: 1fr; padding: 15px 0; }
-    .feature-item { padding: 15px 0; }
-    .feature-item::after { display: none; }
-    .feature-item:not(:last-child) { border-bottom: 1px solid var(--border); }
-}
-    .feature-item::after { display: none; }
-    .feature-item:not(:last-child) { border-bottom: 1px solid var(--border); }
+    .feature-item svg { width: 32px; height: 32px; }
+    .feature-item h3 { font-size: 13px; }
 }
