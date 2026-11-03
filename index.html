@@ -3,40 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="گروه تبلیغاتی ویرا؛ طراحی، ساخت و اجرای انواع تابلوهای تبلیغاتی.">
-    <meta name="theme-color" content="#ffffff">
     <title>گروه تبلیغاتی ویرا | درخشش کسب‌وکار شما</title>
-
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <a class="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
-
-    <!-- Header with curved bottom -->
+    <!-- هدر با گوشه‌های گرد پایین -->
     <header class="site-header">
         <div class="header-inner">
-            <a class="brand" href="index.html" aria-label="صفحه اصلی ویرا">
-                <!-- Use your actual logo image here -->
-                <img src="https://via.placeholder.com/150x150/111/fff?text=VIRA" alt="لوگوی گروه تبلیغاتی ویرا" class="logo-img">
+            <a class="brand" href="index.html">
+                <img src="assets/images/vira-logo.jpg" alt="لوگوی ویرا" class="logo-img">
             </a>
 
-            <details class="mobile-menu">
-                <summary aria-label="باز کردن منو">
-                    <span></span><span></span><span></span>
-                </summary>
-                <nav class="mobile-nav" aria-label="منوی موبایل">
-                    <a class="active" href="index.html">صفحه اصلی</a>
-                    <a href="services.html">خدمات</a>
-                    <a href="portfolio.html">نمونه‌کارها</a>
-                    <a href="about.html">درباره ما</a>
-                    <a href="contact.html">تماس با ما</a>
-                </nav>
-            </details>
-
-            <nav class="main-nav" aria-label="منوی اصلی">
-                <a class="active" href="index.html" aria-current="page">صفحه اصلی</a>
+            <nav class="main-nav">
+                <a href="index.html" class="active">صفحه اصلی</a>
                 <a href="services.html">خدمات</a>
                 <a href="portfolio.html">نمونه‌کارها</a>
                 <a href="about.html">درباره ما</a>
@@ -45,87 +26,65 @@
 
             <a class="header-cta" href="contact.html">
                 مشاوره و سفارش
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </a>
         </div>
     </header>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <!-- Decorative Elements -->
+    <main>
+        <!-- بخش اصلی (دقیقا مثل عکس) -->
+        <section class="hero">
+            <!-- لایه سفید برای خوانایی متن -->
+            <div class="hero-overlay"></div>
+            
+            <!-- المان‌های تزئینی (مثلث زرد و نقطه‌ها) -->
+            <div class="decor-shape-left"></div>
             <div class="decor-dots"></div>
-            <div class="decor-shape"></div>
-            <div class="decor-polygon"></div>
 
-            <div class="hero-inner">
-                <!-- Text Content (Right side in RTL) -->
-                <div class="hero-copy">
-                    <h1 id="hero-title" class="hero-title-wrapper">
-                        <span class="hero-eyebrow">گروه تبلیغاتی <span class="highlight">ویرا</span></span>
-                        <span class="hero-massive-text">ویرا</span>
-                    </h1>
-                    
-                    <p class="hero-lead">
-                        درخشش کسب‌وکار <span class="highlight">شما</span>، تخصص ماست.
-                    </p>
+            <!-- محتوای متنی -->
+            <div class="hero-content">
+                <h1 class="hero-title-wrapper">
+                    <span class="hero-eyebrow">گروه تبلیغاتی <span class="text-yellow">ویرا</span></span>
+                    <span class="hero-massive-text">ویرا</span>
+                </h1>
+                
+                <p class="hero-lead">
+                    درخشش کسب‌وکار <span class="text-yellow">شما</span>، تخصص ماست.
+                </p>
 
-                    <p class="hero-description">
-                        طراحی و ساخت انواع تابلوهای تبلیغاتی با کیفیت عالی و ظاهری ماندگار.
-                    </p>
+                <p class="hero-description">
+                    طراحی و ساخت انواع تابلوهای تبلیغاتی با کیفیت عالی
+                </p>
 
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="portfolio.html">
-                            مشاهده نمونه‌کارها
-                            <span class="btn-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Building Image (Left side in RTL) -->
-                <div class="hero-visual">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="ساختمان تجاری با تابلو تبلیغاتی" class="hero-bg-image">
+                <div class="hero-actions">
+                    <a class="button-primary" href="portfolio.html">
+                        مشاهده نمونه‌کارها
+                        <span class="btn-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Overlapping Features Bar -->
+        <!-- نوار سفید ویژگی‌ها که روی عکس می‌افتد -->
         <section class="features-section">
             <div class="features-card">
                 <article class="feature-item">
-                    <svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                    <h3>کیفیت ماندگار</h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 12L2 9z"/></svg>
                 </article>
                 <article class="feature-item">
-                    <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                    <h3>پشتیبانی همراه</h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
                 </article>
                 <article class="feature-item">
-                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                    <h3>اجرای دقیق</h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 </article>
                 <article class="feature-item">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                    <h3>تخصص و خلاقیت</h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                 </article>
             </div>
-        </section>
-
-        <!-- Intro Section -->
-        <section class="intro-section">
-            <div class="section-heading">
-                <p class="section-kicker">چرا ویرا؟</p>
-                <h2>برند شما شایسته <span>دیده‌شدن</span> است.</h2>
-                <p>ما کمک می‌کنیم کسب‌وکار شما در نگاه اول، حرفه‌ای و به‌یادماندنی دیده شود.</p>
-            </div>
-            <a class="text-link" href="services.html">آشنایی با خدمات ویرا <span>←</span></a>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <!-- Footer content remains the same -->
-    </footer>
 </body>
 </html>
