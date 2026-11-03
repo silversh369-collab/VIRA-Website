@@ -274,14 +274,17 @@ img { display: block; max-width: 100%; }
 }
 .feature-item h3 { font-size: 15px; font-weight: 700; }
 /* =========================================
-   ریسپانسیو موبایل (اصلاح کامل تداخل و چیدمان)
+   ریسپانسیو موبایل (اصلاح نهایی تداخل)
 ========================================= */
 
 @media (max-width: 992px) {
     .main-nav, .desktop-only { display: none; }
     .mobile-menu { display: block; }
 
-    .hero { padding: 10px 0 40px; }
+    /* فاصله‌های بخش هیرو متعادل شد */
+    .hero { 
+        padding: 20px 0 40px; 
+    }
     
     .hero-inner {
         grid-template-columns: 1fr;
@@ -314,7 +317,7 @@ img { display: block; max-width: 100%; }
     .hero-eyebrow { margin-bottom: 0; font-size: 1.2rem; }
     .hero-massive-text { font-size: clamp(4rem, 15vw, 7rem); letter-spacing: -1px; }
     .hero-lead { margin-bottom: 10px; }
-    .hero-description { max-width: 100%; margin-bottom: 20px; }
+    .hero-description { max-width: 100%; margin-bottom: 25px; }
 
     .button-primary {
         padding: 10px 20px;
@@ -323,17 +326,20 @@ img { display: block; max-width: 100%; }
         max-width: 280px;
     }
 
-    /* 🛠 رفع مشکل تداخل: حذف حاشیه منفی در موبایل */
+    /* 🛠 اصلاح اصلی: برداشتن حالت اورلب (منفی) در موبایل */
     .features-section { 
-        margin-top: 30px; /* فاصله گرفتن از دکمه */
-        padding: 0 15px;
+        margin-top: 0; /* صفر شد تا روی دکمه نیفتد */
+        padding: 0 15px 40px; /* فاصله پایین برای تنفس */
+        position: relative;
+        z-index: 1; /* زد ایندکس کم شد تا روی دکمه نیفتد */
     }
     
-    /* چیدمان ۲ در ۲ برای ویژگی‌ها در موبایل */
+    /* چیدمان ۲ در ۲ برای ویژگی‌ها */
     .features-card { 
         grid-template-columns: repeat(2, 1fr); 
         gap: 15px 0; 
         padding: 20px 10px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* سایه ملایم‌تر */
     }
     
     .feature-item { 
@@ -351,13 +357,18 @@ img { display: block; max-width: 100%; }
     }
     .feature-item:nth-child(2)::after { display: none; } 
     
-    /* خط جدا کننده افقی بین ردیف اول و دوم */
+    /* خط جدا کننده افقی */
     .feature-item:nth-child(1), .feature-item:nth-child(2) {
         border-bottom: 1px solid var(--border);
         padding-bottom: 20px;
     }
 }
 
+@media (max-width: 576px) {
+    .hero-massive-text { font-size: 4.5rem; } 
+    .feature-item svg { width: 32px; height: 32px; }
+    .feature-item h3 { font-size: 13px; }
+}
 @media (max-width: 576px) {
     .hero-massive-text { font-size: 4.5rem; } 
     
