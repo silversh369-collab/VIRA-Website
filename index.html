@@ -2,20 +2,24 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <!-- این خط برای نمایش درست توی گوشی حیاتی است -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="گروه تبلیغاتی ویرا؛ درخشش کسب‌وکار شما، تخصص ماست.">
     <title>گروه تبلیغاتی ویرا | درخشش کسب‌وکار شما</title>
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <!-- لود فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <!-- لود فایل استایل -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- هدر سایت -->
+    <!-- ==================== HEADER ==================== -->
     <header class="site-header">
-        <div class="container header-inner">
+        <div class="header-inner">
             <!-- لوگو -->
-            <a class="brand" href="index.html">
-                <img src="https://raw.githubusercontent.com/silversh369-collab/VIRA-Website/main/assets/images/vira-logo.jpg" alt="لوگوی ویرا" class="logo-img">
+            <a href="index.html" class="brand">
+                <img src="assets/images/vira-logo.jpg" alt="لوگوی گروه تبلیغاتی ویرا" class="logo-img">
             </a>
 
             <!-- منوی دسکتاپ -->
@@ -28,14 +32,15 @@
             </nav>
 
             <!-- دکمه مشاوره دسکتاپ -->
-            <a class="header-cta desktop-only" href="contact.html">
+            <a href="contact.html" class="header-cta desktop-only">
                 مشاوره و سفارش
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </a>
 
             <!-- منوی موبایل (همبرگری) -->
             <details class="mobile-menu">
-                <summary>
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                <summary aria-label="باز کردن منو">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
                 </summary>
                 <nav class="mobile-nav">
                     <a href="index.html" class="active">صفحه اصلی</a>
@@ -43,40 +48,57 @@
                     <a href="portfolio.html">نمونه‌کارها</a>
                     <a href="about.html">درباره ما</a>
                     <a href="contact.html">تماس با ما</a>
-                    <a href="contact.html" style="color: var(--yellow-dark); font-weight: 900;">مشاوره و سفارش</a>
+                    <a href="contact.html" class="mobile-cta">مشاوره و سفارش</a>
                 </nav>
             </details>
         </div>
     </header>
 
+    <!-- ==================== MAIN CONTENT ==================== -->
     <main>
-        <!-- هیرو (بخش اصلی) -->
+        <!-- بخش هیرو (Hero) -->
         <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="decor-shape-left"></div>
-            <div class="decor-dots"></div>
+            <!-- المان‌های تزئینی پس‌زمینه -->
+            <div class="hero-decoration-shape"></div>
+            <div class="hero-decoration-dots"></div>
             
-            <div class="container hero-content">
-                <h1 class="hero-title-wrapper">
-                    <span class="hero-eyebrow">گروه تبلیغاتی <span class="text-yellow">ویرا</span></span>
-                    <span class="hero-massive-text">ویرا</span>
-                </h1>
-                <p class="hero-lead">درخشش کسب‌وکار <span class="text-yellow">شما</span>، تخصص ماست.</p>
-                <p class="hero-description">طراحی و ساخت انواع تابلوهای تبلیغاتی با کیفیت عالی</p>
-                <div class="hero-actions">
-                    <a class="button-primary" href="portfolio.html">
-                        مشاهده نمونه‌کارها
-                        <span class="btn-icon">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        </span>
-                    </a>
+            <div class="hero-inner">
+                <!-- محتوای متنی (سمت راست) -->
+                <div class="hero-copy">
+                    <h1 class="hero-title-wrapper">
+                        <span class="hero-eyebrow">گروه تبلیغاتی <span class="text-yellow">ویرا</span></span>
+                        <span class="hero-massive-text">ویرا</span>
+                    </h1>
+                    
+                    <p class="hero-lead">
+                        درخشش کسب‌وکار <span class="text-yellow">شما</span>، تخصص ماست.
+                    </p>
+                    
+                    <p class="hero-description">
+                        طراحی و ساخت انواع تابلوهای تبلیغاتی با کیفیت عالی و ظاهری ماندگار.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="portfolio.html" class="button-primary">
+                            مشاهده نمونه‌کارها
+                            <span class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- تصویر ساختمان (سمت چپ) -->
+                <div class="hero-visual">
+                    <!-- تصویر واقعی را اینجا قرار می‌دهیم -->
+                    <img src="assets/images/hero-building.jpg" alt="نمای ساختمان تجاری با تابلو تبلیغاتی ویرا" class="hero-image">
                 </div>
             </div>
         </section>
 
-        <!-- نوار ویژگی‌ها -->
+        <!-- نوار ویژگی‌ها (Features Bar) -->
         <section class="features-section">
-            <div class="container features-card">
+            <div class="features-card">
                 <article class="feature-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 12L2 9z"/></svg>
                     <h3>کیفیت ماندگار</h3>
@@ -95,7 +117,7 @@
                 </article>
             </div>
         </section>
-
     </main>
+
 </body>
 </html>
