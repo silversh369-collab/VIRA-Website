@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <!-- این خط برای نمایش درست توی گوشی حیاتی است -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>گروه تبلیغاتی ویرا | درخشش کسب‌وکار شما</title>
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
@@ -9,12 +10,15 @@
 </head>
 <body>
 
-    <!-- 1. هدر -->
+    <!-- هدر سایت -->
     <header class="site-header">
         <div class="container header-inner">
+            <!-- لوگو -->
             <a class="brand" href="index.html">
                 <img src="https://raw.githubusercontent.com/silversh369-collab/VIRA-Website/main/assets/images/vira-logo.jpg" alt="لوگوی ویرا" class="logo-img">
             </a>
+
+            <!-- منوی دسکتاپ -->
             <nav class="main-nav">
                 <a href="index.html" class="active">صفحه اصلی</a>
                 <a href="services.html">خدمات</a>
@@ -22,15 +26,31 @@
                 <a href="about.html">درباره ما</a>
                 <a href="contact.html">تماس با ما</a>
             </nav>
-            <a class="header-cta" href="contact.html">
+
+            <!-- دکمه مشاوره دسکتاپ -->
+            <a class="header-cta desktop-only" href="contact.html">
                 مشاوره و سفارش
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </a>
+
+            <!-- منوی موبایل (همبرگری) -->
+            <details class="mobile-menu">
+                <summary>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </summary>
+                <nav class="mobile-nav">
+                    <a href="index.html" class="active">صفحه اصلی</a>
+                    <a href="services.html">خدمات</a>
+                    <a href="portfolio.html">نمونه‌کارها</a>
+                    <a href="about.html">درباره ما</a>
+                    <a href="contact.html">تماس با ما</a>
+                    <a href="contact.html" style="color: var(--yellow-dark); font-weight: 900;">مشاوره و سفارش</a>
+                </nav>
+            </details>
         </div>
     </header>
 
     <main>
-        <!-- 2. هیرو (کپی عکس) -->
+        <!-- هیرو (بخش اصلی) -->
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="decor-shape-left"></div>
@@ -46,13 +66,15 @@
                 <div class="hero-actions">
                     <a class="button-primary" href="portfolio.html">
                         مشاهده نمونه‌کارها
-                        <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg></span>
+                        <span class="btn-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. نوار ویژگی‌ها (شناور) -->
+        <!-- نوار ویژگی‌ها -->
         <section class="features-section">
             <div class="container features-card">
                 <article class="feature-item">
@@ -74,110 +96,6 @@
             </div>
         </section>
 
-        <!-- 4. معرفی کوتاه (چرا ویرا؟) -->
-        <section class="about-brief section-padding">
-            <div class="container about-grid">
-                <div class="about-text">
-                    <span class="section-subtitle">چرا ویرا؟</span>
-                    <h2 class="section-title">برند شما شایسته <span class="text-yellow">دیده‌شدن</span> است.</h2>
-                    <p>ما کمک می‌کنیم کسب‌وکار شما در نگاه اول، حرفه‌ای و به‌یادماندنی دیده شود. با تکیه بر تجربه و خلاقیت، بهترین راهکارها را برای شما اجرا می‌کنیم.</p>
-                    <a href="services.html" class="text-link">آشنایی با خدمات ویرا ←</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="دفتر ویرا">
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. خدمات (۳ کارت) -->
-        <section class="home-services bg-light section-padding">
-            <div class="container">
-                <div class="section-heading-center">
-                    <h2 class="section-title">خدمات <span class="text-yellow">تخصصی</span> ما</h2>
-                    <p>راهکارهای جامع برای دیده شدن برند شما</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18"/></svg></div>
-                        <h3>طراحی تابلو</h3>
-                        <p>طراحی سه بعدی و دوبعدی متناسب با هویت بصری برند.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                        <h3>ساخت و اجرا</h3>
-                        <p>اجرای تخصصی تابلوهای چلنیوم، کامپوزیت و استند.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-                        <h3>نورپردازی</h3>
-                        <p>استفاده از سیستم‌های مدرن برای جلب توجه در شب.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. آمار و ارقام -->
-        <section class="stats-section section-padding">
-            <div class="container stats-grid">
-                <div class="stat-item">
-                    <h3 class="stat-number">+۲۵۰</h3>
-                    <p>پروژه موفق</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">+۱۰</h3>
-                    <p>سال تجربه</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">۹۸٪</h3>
-                    <p>رضایت مشتری</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number">+۵۰</h3>
-                    <p>برند همکار</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. دعوت به همکاری (CTA) -->
-        <section class="cta-section section-padding">
-            <div class="container">
-                <div class="cta-box">
-                    <h2>آماده‌اید برندتان بدرخشد؟</h2>
-                    <p>همین حالا با کارشناسان ویرا تماس بگیرید.</p>
-                    <a href="contact.html" class="btn-dark">درخواست مشاوره رایگان</a>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <!-- 8. فوتر -->
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-col brand-col">
-                <img src="https://raw.githubusercontent.com/silversh369-collab/VIRA-Website/main/assets/images/vira-logo.jpg" alt="ویرا">
-                <p>ارائه دهنده مدرن‌ترین راهکارهای تبلیغاتی و تابلوهای تجاری در ایران.</p>
-            </div>
-            <div class="footer-col">
-                <h4>دسترسی سریع</h4>
-                <a href="#">صفحه اصلی</a>
-                <a href="#">خدمات ما</a>
-                <a href="#">نمونه‌کارها</a>
-            </div>
-            <div class="footer-col">
-                <h4>اطلاعات تماس</h4>
-                <p>تهران، خیابان ولیعصر</p>
-                <p>۰۲۱-۱۲۳۴۵۶۷۸</p>
-            </div>
-            <div class="footer-col">
-                <h4>شبکه‌های اجتماعی</h4>
-                <a href="#">اینستاگرام</a>
-                <a href="#">واتساپ</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© تمامی حقوق برای گروه تبلیغاتی ویرا محفوظ است.</p>
-        </div>
-    </footer>
-
 </body>
 </html>
