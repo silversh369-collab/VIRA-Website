@@ -1,5 +1,5 @@
 /* =========================================
-   VIRA ADVERTISING GROUP - Exact Match Layout
+   VIRA ADVERTISING GROUP - Fixed Layout
 ========================================= */
 
 :root {
@@ -9,6 +9,7 @@
     --muted: #555555;
     --white: #ffffff;
     --border: #eaeaea;
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
     --max-width: 1400px;
 }
 
@@ -30,43 +31,37 @@ a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
 /* =========================================
-   هدر (دقیقاً مثل عکس)
+   هدر
 ========================================= */
 .site-header {
     background: var(--white);
     position: relative;
     z-index: 100;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* سایه ملایم برای کل هدر */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
 }
 
 .header-inner {
-    max-width: 100%; /* هدر کل عرض رو بگیره */
-    padding: 15px 40px;
-    min-height: 100px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* لوگوی مشتری - بزرگ و باکلاس */
 .logo-img {
-    width: 90px; 
-    height: 90px;
-    border-radius: 50%; 
-    object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* سایه برای برجسته شدن */
-    border: 2px solid var(--white);
-    background: #1a1a1a; /* پس‌زمینه تیره برای لوگوهایی که شفاف نیستن */
-    transition: transform 0.3s ease;
-}
-.logo-img:hover {
-    transform: scale(1.05);
+    width: 75px; height: 75px;
+    border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--border);
 }
 
 .main-nav { display: flex; gap: 35px; }
 .main-nav a {
-    font-size: 16px; font-weight: 700; color: #333;
-    position: relative; padding-bottom: 8px;
+    font-size: 15px; font-weight: 700; color: #333;
+    position: relative; padding-bottom: 5px;
 }
 .main-nav a.active { color: var(--primary-dark); }
 .main-nav a.active::after {
@@ -76,8 +71,8 @@ img { display: block; max-width: 100%; }
 
 .header-cta {
     background: var(--primary-yellow); color: var(--ink);
-    padding: 12px 30px; border-radius: 50px;
-    font-weight: 800; font-size: 15px;
+    padding: 12px 25px; border-radius: 50px;
+    font-weight: 800; font-size: 14px;
     display: flex; align-items: center; gap: 10px;
     transition: 0.3s;
 }
@@ -98,60 +93,57 @@ img { display: block; max-width: 100%; }
 .mobile-nav a:hover, .mobile-nav a.active { background: #f5f5f5; color: var(--primary-dark); }
 
 /* =========================================
-   بخش هیرو (شبیه‌سازی دقیق عکس)
+   بخش هیرو (ساختار استاندارد)
 ========================================= */
 .hero {
     position: relative;
     background: var(--white);
-    padding: 80px 0 100px;
+    padding: 60px 0 120px;
     overflow: hidden;
 }
 
-/* شکل زرد مورب سمت چپ (مثل عکس) */
+/* شکل زرد */
 .yellow-shape {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 25vw; /* عرض بر اساس صفحه */
-    height: 100%;
+    left: -50px; top: 0;
+    width: 250px; height: 100%;
     background: var(--primary-yellow);
-    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%); /* شکل مورب */
+    clip-path: polygon(0 0, 100% 0, 0 100%);
     z-index: 1;
 }
 
 /* نقطه‌ها */
 .dots-pattern {
     position: absolute;
-    left: 18%; /* جابجایی نقطه‌ها */
-    top: 15%;
+    right: 45%; top: 30%;
     width: 200px; height: 200px;
     background-image: radial-gradient(#ccc 2px, transparent 2px);
     background-size: 20px 20px;
-    opacity: 0.6; z-index: 1;
+    opacity: 0.5; z-index: 1;
 }
 
 /* گرید دو ستونه */
 .hero-inner {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: 1fr 1.2fr; /* ستون عکس کمی بزرگتر */
-    gap: 40px;
+    grid-template-columns: 1fr 1fr; /* دو ستون مساوی */
+    gap: 30px;
     align-items: center;
     position: relative;
     z-index: 10;
 }
 
-.hero-copy { position: relative; z-index: 5; padding-right: 20px; }
+.hero-copy { position: relative; z-index: 5; }
 
-.hero-title-wrapper { display: flex; flex-direction: column; margin-bottom: 30px; }
-.hero-eyebrow { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; margin-bottom: -10px; z-index: 2; }
+.hero-title-wrapper { display: flex; flex-direction: column; margin-bottom: 20px; }
+.hero-eyebrow { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; margin-bottom: -15px; z-index: 2; }
 .hero-massive-text { font-size: clamp(7rem, 14vw, 13rem); font-weight: 900; line-height: 1; letter-spacing: -4px; z-index: 1; }
 .text-yellow { color: var(--primary-dark); }
 
-.hero-lead { font-size: clamp(1.3rem, 2vw, 1.8rem); font-weight: 800; margin-bottom: 15px; }
-.hero-description { font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--muted); margin-bottom: 40px; max-width: 90%; }
+.hero-lead { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 800; margin-bottom: 15px; }
+.hero-description { font-size: clamp(1rem, 1.5vw, 1.1rem); color: var(--muted); margin-bottom: 35px; max-width: 90%; }
 
 /* دکمه با جلوگیری از شکستن متن */
 .button-primary {
@@ -160,12 +152,12 @@ img { display: block; max-width: 100%; }
     gap: 15px;
     background: var(--primary-yellow);
     color: var(--ink);
-    padding: 14px 35px;
+    padding: 12px 30px;
     border-radius: 50px;
     font-weight: 800;
     font-size: clamp(1rem, 1.5vw, 1.1rem);
     transition: 0.3s;
-    white-space: nowrap;
+    white-space: nowrap; /* جلوگیری از شکستن متن دکمه */
 }
 .button-primary:hover { background: var(--primary-dark); gap: 20px; }
 .btn-icon {
@@ -174,98 +166,90 @@ img { display: block; max-width: 100%; }
     display: flex; align-items: center; justify-content: center; border-radius: 50%;
 }
 
-/* عکس ساختمان (کاملاً واضح و بدون محو شدن) */
+/* عکس با محو شدن لبه راست */
 .hero-visual {
     position: relative;
     z-index: 3;
+    /* عکس رو به سمت راست محو میکنیم که با پس‌زمینه یکی بشه */
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }
-
-.hero-image { 
-    width: 100%; 
-    height: auto; 
-    display: block; 
-    border-radius: 20px; /* گردی ملایم گوشه‌ها */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15); /* سایه عمیق برای جدا شدن از پس‌زمینه */
-}
+.hero-image { width: 100%; height: auto; display: block; }
 
 /* =========================================
-   نوار ویژگی‌ها (همپوشانی با عکس)
+   نوار ویژگی‌ها
 ========================================= */
 .features-section {
-    position: relative; 
-    z-index: 20; 
-    margin-top: -60px; /* اومدن به بالا (Overlap) */
-    padding: 0 40px;
+    position: relative; z-index: 20; margin-top: -70px; padding: 0 20px;
 }
 .features-card {
     max-width: var(--max-width); margin: 0 auto;
     background: var(--white); border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    display: grid; grid-template-columns: repeat(4, 1fr); padding: 35px 0;
+    display: grid; grid-template-columns: repeat(4, 1fr); padding: 30px 0;
 }
 .feature-item { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
 .feature-item:not(:last-child)::after {
     content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-    height: 60px; width: 1px; background: var(--border);
+    height: 50px; width: 1px; background: var(--border);
 }
-.feature-item svg { width: 45px; height: 45px; color: var(--ink); }
-.feature-item h3 { font-size: 16px; font-weight: 700; }
+.feature-item svg { width: 40px; height: 40px; color: var(--ink); }
+.feature-item h3 { font-size: 15px; font-weight: 700; }
 
 /* =========================================
-   ریسپانسیو موبایل
+   ریسپانسیو موبایل (اصلاح کامل)
 ========================================= */
 @media (max-width: 992px) {
     .main-nav, .desktop-only { display: none; }
     .mobile-menu { display: block; }
 
-    .header-inner { padding: 10px 20px; min-height: 80px; }
-    .logo-img { width: 70px; height: 70px; }
+    .hero { padding: 20px 0 40px; }
     
-    .hero { padding: 30px 0 40px; }
-    
+    /* تبدیل به یک ستون */
     .hero-inner {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 30px;
-        padding: 0 20px;
+        gap: 20px;
     }
 
-    .hero-visual { order: -1; margin-top: 0; }
+    /* عکس میره بالا */
+    .hero-visual { 
+        order: -1; 
+        margin-top: 10px;
+        /* در موبایل محو کردن رو از پایین انجام میدیم تا عکس تمیز باشه */
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
     
     .hero-copy {
         display: flex; flex-direction: column; align-items: center;
-        padding-right: 0;
     }
 
-    .yellow-shape { 
-        width: 100%; 
-        height: 200px; 
-        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%); 
-    }
-    .dots-pattern { display: none; }
+    .yellow-shape, .dots-pattern { display: none; }
 
-    .hero-title-wrapper { margin-bottom: 20px; }
-    .hero-eyebrow { margin-bottom: 0; font-size: 1.3rem; }
-    .hero-massive-text { font-size: 5.5rem; letter-spacing: -2px; }
-    .hero-lead { margin-bottom: 10px; font-size: 1.3rem; }
-    .hero-description { max-width: 100%; margin-bottom: 30px; font-size: 1rem; }
+    /* تنظیم دقیق فونت‌ها و فاصله‌ها در موبایل */
+    .hero-title-wrapper { margin-bottom: 15px; }
+    .hero-eyebrow { margin-bottom: 0; font-size: 1.2rem; }
+    .hero-massive-text { font-size: 5rem; letter-spacing: -2px; }
+    .hero-lead { margin-bottom: 10px; font-size: 1.2rem; }
+    .hero-description { max-width: 100%; margin-bottom: 25px; font-size: 0.95rem; }
 
     .button-primary {
-        width: 100%; max-width: 300px; justify-content: center;
+        width: 100%; max-width: 280px; justify-content: center;
     }
 
-    .features-section { margin-top: 20px; padding: 0 20px; z-index: 1; }
-    .features-card { grid-template-columns: repeat(2, 1fr); gap: 20px 0; padding: 25px 10px; }
+    .features-section { margin-top: 0; padding: 0 15px 40px; z-index: 1; }
+    .features-card { grid-template-columns: repeat(2, 1fr); gap: 15px 0; padding: 20px 10px; }
     .feature-item { padding: 10px 0; }
     .feature-item:not(:last-child)::after { height: 40px; }
     .feature-item:nth-child(2)::after { display: none; } 
     .feature-item:nth-child(1), .feature-item:nth-child(2) {
-        border-bottom: 1px solid var(--border); padding-bottom: 25px;
+        border-bottom: 1px solid var(--border); padding-bottom: 20px;
     }
 }
 
 @media (max-width: 576px) {
     .hero-massive-text { font-size: 4.5rem; } 
-    .feature-item svg { width: 35px; height: 35px; }
-    .feature-item h3 { font-size: 14px; }
+    .feature-item svg { width: 32px; height: 32px; }
+    .feature-item h3 { font-size: 13px; }
 }
