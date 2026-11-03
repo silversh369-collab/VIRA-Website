@@ -1,0 +1,4 @@
+
+"""
+VIRA Django project package.
+"""
